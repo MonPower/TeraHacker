@@ -1,3 +1,5 @@
 # TeraHacker
-Teradata hackthon team members:
+Teradata hackthon
+
+Jialong Li
 Zhen Zhai
