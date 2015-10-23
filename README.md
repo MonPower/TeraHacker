@@ -4,3 +4,4 @@ Teradata hackthon
 Chenwei Xie
 Jialong Li
 Zhen Zhai
+Yuhui Zhang
