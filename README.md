@@ -1,3 +1,7 @@
 # TeraHacker
-Teradata hackthon team members:
+Teradata hackthon
+
+Chenwei Xie
+Jialong Li
 Zhen Zhai
+Yuhui Zhang
