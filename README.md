@@ -1,0 +1,2 @@
+# TeraHacker
+Teradata hackthon
