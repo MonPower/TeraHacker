@@ -1,2 +1,3 @@
 # TeraHacker
-Teradata hackthon
+Teradata hackthon team members:
+Zhen Zhai
