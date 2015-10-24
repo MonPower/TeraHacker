@@ -53,17 +53,16 @@ def rest_request ( query ,wsUser,wsPass):
     # Parse response to confirm value JSON.
     results = json.loads(response);
 
-    print json.dumps(results, indent=4, sort_keys=True) 
+    return json.dumps(results, indent=4, sort_keys=True);
 
+def perform_query( query, wsUser, wsPass, f):
+    j = rest_request(query, wsUser, wsPass)
+    with open(f , 'w') as outfile:
+        json.dump(j, outfile)
     return;
 
-def perform_query( query, wsUser, wsPass ):
-    rest_request(query, wsUser, wsPass)
-    
-    return;
-
-wsUser = 'hack_user02'
+wsUser = 'hack_user32'
 wsPass = 'tdhackathon'
-perform_query ( 'select * from crime_data.murders_by_weapon_type', wsUser, wsPass)
+perform_query ( 'select * from transportation.aircraft_accident_rates', wsUser, wsPass, 'aircraft_accident_rates.json')
 
 
