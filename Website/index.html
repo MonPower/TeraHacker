@@ -191,7 +191,7 @@ var m = [20, 20, 30, 20],
 var x,
     y,
     duration = 1500,
-    delay = 500;
+    delay = 50000;
 
 var color = d3.scale.category10();
 
@@ -239,14 +239,14 @@ d3.csv("visual.csv", function(data) {
   });
 
   // Sort by maximum price, descending.
-  symbols.sort(function(a, b) { return b.maxPrice - a.maxPrice; });
+  //symbols.sort(function(a, b) { return b.maxPrice - a.maxPrice; });
 
   var g = svg.selectAll("g")
       .data(symbols)
     .enter().append("g")
       .attr("class", "symbol");
 
-  setTimeout(lines, duration);
+  setTimeout(lines, duration+delay);
 });
 
 function lines() {
@@ -299,10 +299,11 @@ function lines() {
     draw(k);
     if ((k += 2) >= n - 1) {
       draw(n - 1);
-      setTimeout(horizons, 500);
+      setTimeout(horizons, 50000);
       return true;
     }
   });
+  setTimeout(horizons, duration + delay);
 }
 
 function horizons() {
