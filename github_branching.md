@@ -38,10 +38,9 @@ git push origin <branch_name>
 git pull origin master
 ```
 Solve conflict if there is any.
-##### 9. After you merge master into your branch, test locally to make sure the merged version works in your local server
+##### 9. After you solved conflicts push to your branch again
 ```
-vagrant ssh
-bash /vagrant/src/servers/init-scripts/restart_servers.sh
+git push origin <branch_name>
 ```
 
 ##### 10. [Create a pull request](https://help.github.com/articles/creating-a-pull-request/)
