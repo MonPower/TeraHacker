@@ -44,7 +44,7 @@ This merges your remote branch origin/master into your local branch you most rec
 ```
 git push origin <branch_name>
 ```
-You push your local branch_name into your remote origin/branch_name, so your remote origin/branch_name branch is synchronized with your local branch_name branch.
+You push your local branch_name to your remote origin/branch_name, so your remote origin/branch_name branch is updated.
 ##### 10. [Create a pull request](https://help.github.com/articles/creating-a-pull-request/)
 * On [GitHub](https://github.com/cse103/Webwork_AdaptiveHints), navigate to the repository from which you'd like to propose changes.
 
