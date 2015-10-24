@@ -17,7 +17,7 @@ git checkout <branch_name>
 ```
 git push origin <branch_name>
 ```
-This means you push your local branch <branch_name> to create your remote branch origin/<branch_name>. Your local branch <branch_name> is now tracking your remote branch origin/<branch_name>.
+This means you push your local branch branch_name to create your remote branch origin/branch_name. Your local branch branch_name is now tracking your remote branch origin/branch_name.
 So other people can see your branch.
 
 ##### 5. Remember to make sure you are in your branch before you make changes locally
@@ -34,17 +34,17 @@ git commit -m "changes something"
 ```
 git push origin <branch_name>
 ```
-Yo push your local branch <branch_name> to your remote branch origin/<branch_name>. So, your remote branch origin/<branch_name> is updated
+You push your local branch branch_name to your remote branch origin/branch_name. So, your remote branch origin/branch_name is updated
 ##### 8. Now to merge master into your branch
 ```
 git pull origin master
 ```
-This merges your remote branch origin/master into your local branch you most recently checkedout (which is assumed to be <branch_name>). Solve conflict if there is any. After this, you have merged remote origin/master branch into your local <branch_name> branch. 
+This merges your remote branch origin/master into your local branch you most recently checkedout (which is assumed to be branch_name). Solve conflict if there is any. After this, you have merged remote origin/master branch into your local branch_name branch. 
 ##### 9. After you solved conflicts push to your branch again
 ```
 git push origin <branch_name>
 ```
-You push your local <branch_name> into your remote origin/<branch_name>, so your remote origin/<branch_name> branch is synchronized with your local <branch_name> branch.
+You push your local branch_name into your remote origin/branch_name, so your remote origin/branch_name branch is synchronized with your local branch_name branch.
 ##### 10. [Create a pull request](https://help.github.com/articles/creating-a-pull-request/)
 * On [GitHub](https://github.com/cse103/Webwork_AdaptiveHints), navigate to the repository from which you'd like to propose changes.
 
