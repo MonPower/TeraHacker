@@ -65,4 +65,3 @@ wsUser = 'hack_user32'
 wsPass = 'tdhackathon'
 perform_query ( 'select * from transportation.monthy_number_of_airline_passengers_all_carriers', wsUser, wsPass, 'monthly_number_of_airline_passengers_all_carriers.json')
 
-
