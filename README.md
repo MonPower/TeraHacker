@@ -1,5 +1,7 @@
 # Teradata Hackthon
 Teradata hackthon
+Website:
+http://1.teradatahack.sinaapp.com
 
 Team Members:
 Chenwei Xie
