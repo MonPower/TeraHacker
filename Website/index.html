@@ -98,10 +98,8 @@ svg {
             <div class="services">
                 <h3>ABOUT DATA</h3>
             </div>  
-            <div class="about-info">
-                <h4>Lorem Ipsum is not simply random text. It has roots in a piece of classical</h4>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised 
-                    words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. </p>
+            <div class="about-info" id="xxx" align="center">
+                <font size="4"> Airline, as the most efficient and convenient traffic method, has drawn much public attentions. With an increasing number of persons choose airline as their preferences, more and more concerns have been cast to how long it takes, how safe it is and, of course, how much it costs. In particular, most of us must have been confused about the flight price, which seems to be influenced by lots of causes. Sometimes it even changes like time series. Today, we take the great of the method of data mining to analyze the underlying relationships among some considerable causes. </font>
 
                 <div class="clearfix"> </div>
             </div>
@@ -197,7 +195,7 @@ var x,
 
 var color = d3.scale.category10();
 
-var svg = d3.select("about-info").append("svg")
+var svg = d3.select("#xxx").append("svg")
     .attr("width", w + m[1] + m[3])
     .attr("height", h + m[0] + m[2])
   .append("g")
@@ -224,7 +222,7 @@ var area = d3.svg.area()
     .x(function(d) { return x(d.date); })
     .y1(function(d) { return y(d.price); });
 
-d3.csv("stocks.csv", function(data) {
+d3.csv("visual.csv", function(data) {
   var parse = d3.time.format("%b %Y").parse;
 
   // Nest stock values by symbol.
