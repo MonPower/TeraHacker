@@ -13,30 +13,10 @@ svg {
 }
 
 </style>
-<body>
-<select id="mySelect" onchange="myFunction()">
-  <option value="All">ALL
-  <option value="lines">Lines
-  <option value="Mercedes">Mercedes
-  <option value="Volvo">Volvo
-</select>
-<p id="demo"></p>
+<body align = "center">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 <script>
 
-function myFunction() {
-    var x = document.getElementById("mySelect").value;
-    document.getElementById("demo").innerHTML = "You selected: " + x;
-
-    switch (x) {
-      case "All" :
-        d3.select("svg").remove();
-        function1();
-        break;
-    }
-}
-
-function function1() {
 var m = [20, 20, 30, 20],
     w = 960 - m[1] - m[3],
     h = 500 - m[0] - m[2];
@@ -101,7 +81,6 @@ d3.csv("stocks.csv", function(data) {
 
   setTimeout(lines, duration);
 });
-
 
 function lines() {
   x = d3.time.scale().range([0, w - 60]);
@@ -596,72 +575,5 @@ function donutExplode() {
     lines();
   }, duration);
 }
-}
-
-
-var m = [20, 20, 30, 20],
-    w = 960 - m[1] - m[3],
-    h = 500 - m[0] - m[2];
-
-var x,
-    y,
-    duration = 1500,
-    delay = 500;
-
-var color = d3.scale.category10();
-
-var svg = d3.select("body").append("svg")
-    .attr("width", w + m[1] + m[3])
-    .attr("height", h + m[0] + m[2])
-  .append("g")
-    .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
-
-var stocks,
-    symbols;
-
-// A line generator, for the dark stroke.
-var line = d3.svg.line()
-    .interpolate("basis")
-    .x(function(d) { return x(d.date); })
-    .y(function(d) { return y(d.price); });
-
-// A line generator, for the dark stroke.
-var axis = d3.svg.line()
-    .interpolate("basis")
-    .x(function(d) { return x(d.date); })
-    .y(h);
-
-// A area generator, for the dark stroke.
-var area = d3.svg.area()
-    .interpolate("basis")
-    .x(function(d) { return x(d.date); })
-    .y1(function(d) { return y(d.price); });
-
-d3.csv("stocks.csv", function(data) {
-  var parse = d3.time.format("%b %Y").parse;
-
-  // Nest stock values by symbol.
-  symbols = d3.nest()
-      .key(function(d) { return d.symbol; })
-      .entries(stocks = data);
-
-  // Parse dates and numbers. We assume values are sorted by date.
-  // Also compute the maximum price per symbol, needed for the y-domain.
-  symbols.forEach(function(s) {
-    s.values.forEach(function(d) { d.date = parse(d.date); d.price = +d.price; });
-    s.maxPrice = d3.max(s.values, function(d) { return d.price; });
-    s.sumPrice = d3.sum(s.values, function(d) { return d.price; });
-  });
-
-  // Sort by maximum price, descending.
-  symbols.sort(function(a, b) { return b.maxPrice - a.maxPrice; });
-
-  var g = svg.selectAll("g")
-      .data(symbols)
-    .enter().append("g")
-      .attr("class", "symbol");
-
-  setTimeout(lines, duration);
-});
 
 </script>
