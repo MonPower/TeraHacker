@@ -43,7 +43,7 @@ var percent = d3.format(".1%"),
     format = d3.time.format("%Y-%m-%d");
 
 var color = d3.scale.quantize()
-    .domain([-2, 5])
+    .domain([-7, 13])
     .range(d3.range(11).map(function(d) { return "q" + d + "-11"; }));
 
 var svg = d3.select("body").selectAll("svg")
@@ -79,7 +79,7 @@ svg.selectAll(".month")
     .attr("class", "month")
     .attr("d", monthPath);
 
-d3.csv("monthPriceCSV.csv", function(error, csv) {
+d3.csv("monthPassengerCSV.csv", function(error, csv) {
   if (error) throw error;
 
   var data = d3.nest()
