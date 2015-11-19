@@ -22,6 +22,6 @@ Visualization Overview:
 ----------------
 ![Alt text](Website/images/finding1.png)
 
-3.Automatic Graph
+3.Automaticcally changing Graph
 -----------------
-We have a lot of automatic graphs here.)
+We have a lot of graphs here which changes automatically.
